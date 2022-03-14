@@ -1,0 +1,282 @@
+@use '../mixin/mixin' as *;
+@use '../setting/setting' as *;
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+/*------------------------------------------------------------------------------
+  reset PC
+------------------------------------------------------------------------------*/
+
+
+html {
+  color: #000;
+  background: #fff;
+  word-break: break-all;
+}
+
+body {
+  background: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  // vertical-align: top;
+  max-width: 100%;
+}
+
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: $transition01;
+  // @include pc {
+  //   &:hover {
+  //     opacity: .8;
+  //   }
+  // }
+}
+
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  // appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+@include placeholder(#ccc);
+
+button {
+  cursor: pointer;
+}
+
+// label {
+//   cursor: pointer;
+// }
+
+table {
+  border-collapse: collapse;
+}
+
+main {
+  display: block;
+}
+
+// .inner-block {
+//   position: relative;
+//   max-width: 1040px;
+//   padding: 0 30px;
+//   box-sizing: content-box;
+//   @include pc {
+//     margin: 0 auto;
+//   }
+// }
+
+#wrapper {
+  position: relative;
+}
+
+
+@include pc {
+  .sp {
+    display: none !important;
+  }
+
+  a[href^="tel:"] {
+    pointer-events: none;
+  }
+
+  a,
+  a::before,
+  a::after,
+  button {
+    transition: $transition01;
+  }
+}
+
+
+//独自font-family読み込み
+//@font-face {
+//  src: url(../font/NotoSansJP-Medium.woff) format("woff"),
+//    url(../font/NotoSansJP-Medium.otf) format("opentype");
+//  font-family: "Noto Sans JP";
+//  font-weight: 500;
+//  font-display: swap;
+//}
+//@font-face {
+//  src: url(../font/NotoSansJP-Bold.woff) format("woff"),
+//    url(../font/NotoSansJP-Bold.otf) format("opentype");
+//  font-family: "Noto Sans JP";
+//  font-weight: 700;
+//  font-display: swap;
+//}
+
+
+//SVGスプライトリセットCSS
+.c-svg {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: top;
+}
+
+/*------------------------------------------------------------------------------
+  reset SP
+------------------------------------------------------------------------------*/
+@include sp {
+  body {
+    position: relative;
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  #wrapper {
+    min-width: 320px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  input[type="submit"] {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  // input,
+  // select,
+  // textarea {
+  //   font-size: 16px !important;
+  // }
+
+  .pc {
+    display: none !important;
+  }
+}
+
+
+html {
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  //375px~787px
+  font-size: 10px;
+	@include mq("md") {
+		font-size: calc(10 / 1260 * 100vw);
+	}
+  //inner~max-screen
+  @media (min-width: 1260px) {
+    font-size: 10px;
+  }
+
+}
+
+body {
+  font-size: 1.6rem;
+  // font-family: $yakuhan-font;
+  font-family: $yakuhan-font;
+  font-weight: 400;
+  color: $font-color;
+  box-sizing: border-box;
+  padding-top: 180px;
+
+  @include sp {
+    font-size: 1.4rem;
+    padding-top: 60px;
+  }
+}
+
+// ハンバーガーメニューで背景を固定
+html.is-fixed,
+html.is-fixed body {
+  overflow: hidden;
+}
+
+
+
+
+#container {
+  overflow: hidden;
+}
+
+.main {
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+
+

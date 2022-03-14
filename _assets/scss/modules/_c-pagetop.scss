@@ -1,0 +1,149 @@
+@use '../mixin/mixin' as *;
+@use '../setting/setting' as *;
+
+/* --------------------------------
+top-fv
+----------------------------------- */
+.top-fv {
+  width: 100%;
+  // height: 33.33vw;
+  background: #faa;
+  &__wrap {
+    height: 100%;
+    position: relative;
+    li {
+      // width: 100%;
+      width: auto;
+      max-width: 1200px;
+      height: 64rem;
+      background: #ddd;
+      margin: 0 auto;
+      @include sp {
+        height: 126.6vw;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .slide-arrow {
+      width: 3rem;
+      height: 7rem;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: 10;
+      @media (min-width: 1200px){
+        left: calc((100vw - 1200px) / 2);
+      }
+      i {
+        color: #fff;
+      }
+    }
+    .next-arrow {
+      left: initial;
+      right: 0;
+      @media (min-width: 1200px){
+        left: initial;
+        right: calc((100vw - 1200px) / 2);
+      }
+    }
+  }
+}
+.top-fv-news {
+  height: 7rem;
+  background: #dad8d1;
+  padding: 0 30px;
+  @include sp {
+    padding: 0 1.5rem;
+    height: 8rem;
+  }
+  &__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__contents {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    @include sp {
+      height: initial;
+      height: 5rem;
+    }
+  }
+  .top-fv-news-contents {
+    &__title {
+      width: 13.5rem;
+      height: 100%;
+      border-left: 1px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include sp {
+        width: 5.2rem;
+        border-left: none;
+        justify-content: flex-start;
+      }
+    }
+    &__post {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      border-left: 1px solid #000;
+      @include sp {
+        display: block;
+        padding: 0 1.5rem;
+      }
+    }
+    .top-fv-post {
+      line-height: 1.2;
+      &__date {
+        width: 13rem;
+        text-align: center;
+        @include sp {
+          text-align: left;
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+        }
+      }
+      &__article {
+        display: block;
+        @include sp {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    &__link {
+      display: block;
+      width: 10rem;
+      height: 100%;
+      border-left: 1px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      @include sp {
+        width: 6rem;
+      }
+      i {
+        margin-left: 2.5rem;
+        @include sp {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+

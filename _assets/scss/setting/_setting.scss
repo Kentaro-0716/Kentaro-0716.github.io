@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap');
+
+// フォントの設定
+$font-serif: 'Noto Serif JP', serif;
+$font-sans: 'Noto Sans JP', sans-serif;
+$main-font: 'M PLUS Rounded 1c', sans-serif;
+$yakuhan-font: YakuHanJP, 'Noto Sans JP', sans-serif;
+$yakuhan-font-02: YakuHanJP, 'M PLUS Rounded 1c', sans-serif;
+
+// 色の設定
+$font-color: #2d2d2d;
+$main-color: #d8127e;
+$main-bg-color:#fbd4d4;
+$sub-bg-color:#fdf9ef;
+
+
+// placeholder色
+$placeholderColor: #c3c3c3;
+
+// メディアクエリの基準幅
+$bp-sp: 767px;
+$bp-pc: 768px;
+
+// vwの基準となる幅 →320px=スマホ最小
+$vw_standard_width: 1536;
+
+// transition
+$transition01: 0.3s ease-in-out;
+
+
+// メディアクエリ(Hiroki)
+//ブレイクポイント
+$breakpoints: (
+  sm: 600,
+  md: 768,
+  lg: 1024,
+  xl: 1440,
+);
+
+//メディアクエリー
+$mediaquerys: (
+  sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
+  lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
+  xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
+);
+
+
+
